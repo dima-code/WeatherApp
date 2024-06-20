@@ -14,10 +14,18 @@ struct WeatherButton:View {
     
     var body: some View {
         Text(title)
-            .frame(width: 200, height: 50)
-            .background(backgroundColor)
+            .frame(width: 320, height: 50)
+            .background(backgroundColor.gradient)
             .foregroundColor(textColor)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 20, weight: .bold))
             .cornerRadius(10)
+    }
+}
+
+struct WeatherButton_Previews: PreviewProvider{
+    static var previews: some View{
+        WeatherButton(title: "Test Title",
+                      textColor: .white,
+                      backgroundColor: .blue)
     }
 }
